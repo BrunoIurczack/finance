@@ -1,10 +1,13 @@
 class TransactionsController < ApplicationController
+    #before_action :set_transaction, only: %i[ show ]
 
   def index
     @transactions = Transaction.all
   end
 
-  def show; end
+  def show 
+    @transaction = Transaction.find(params[:id])
+  end
 
   def new
     @transaction = Transaction.new
@@ -27,4 +30,10 @@ class TransactionsController < ApplicationController
 
   def destroy
   end
+
+  private
+  def set_transaction
+    @transaction = Transaction.find(params[:id])
+  end
+
 end

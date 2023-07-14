@@ -1,0 +1,23 @@
+p#notice 
+  = notice 
+p 
+  strog 
+    | Type 
+  = @transaction.transaction_type
+p 
+  strog 
+    | Value
+  = @transaction.value
+p 
+  strog 
+    | Description 
+  = @transaction.description
+p 
+  strog 
+    | Transaction Date 
+  = @transaction.transaction_date
+p 
+  strog 
+    | Status
+  = @transaction.status
+= link_to 'Back', transactions_path

@@ -1,0 +1,35 @@
+#notice
+  = notice
+
+h1
+  | Finance
+
+table 
+  thead 
+    tr 
+      th 
+        = @transactions.human_attribute_name(:transaction_type)
+      th 
+         = @transactions.human_attribute_name(:value)
+      th
+         = @transactions.human_attribute_name(:description)
+      th 
+         = @transactions.human_attribute_name(:transaction_date)
+      th 
+         = @transactions.human_attribute_name(:statu)
+
+      th[colspan="5"]
+
+  tbody
+    - @transactions.each do |transaction|
+      tr
+        td
+          = transaction.transaction_type 
+        td 
+          = transaction.value 
+        td 
+          = transaction.description
+        td 
+          = transaction.transaction_date 
+        td 
+          = transaction.status

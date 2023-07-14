@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_12_170421) do
   enable_extension "plpgsql"
 
   create_table "transactions", force: :cascade do |t|
-    t.integer "type"
+    t.integer "transaction_type"
     t.float "value"
     t.string "description"
     t.date "transaction_date"

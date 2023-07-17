@@ -1,0 +1,9 @@
+= simple_form_for transaction do |f|
+  = f.error_notification 
+  = f.input :transaction_type, collection: Transaction.transaction_types.keys
+  = f.input :value
+  = f.input :description
+  = f.input :transaction_date
+  = f.input :status
+  = f.error :base
+  = f.button :submit
